@@ -41,29 +41,25 @@ To set up the project locally, follow these steps:
 
 ## Clone the Repository:
 
-bash
-
-Copy code:
-
 git clone <repository_url>
 
 cd <repository_directory>
 
-Create a Virtual Environment:
-
-bash
-
-Copy code:
+### Create a Virtual Environment:
 
 python -m venv venv
 
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-Start the Development Server:
+### Install Dependencies:
 
-bash
+pip install -r requirements.txt
 
-Copy code:
+### Run Migrations:
+
+python manage.py migrate
+
+### Start the Development Server:
 
 python manage.py runserver
 
