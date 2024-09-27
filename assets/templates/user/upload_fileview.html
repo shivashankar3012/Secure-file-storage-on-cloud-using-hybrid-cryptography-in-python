@@ -12,7 +12,6 @@
     padding:5px;
     height:300px;
     width:750px;
-    o;
     float:left;
     overflow:scroll;
     }
@@ -21,7 +20,6 @@
     text-align:center;
 
     border-spacing:1px;
-    background:;
 }
 
 
@@ -73,7 +71,7 @@ float:left;
 <td style="color:white">{{a.upload_file}}</td>
 <td style="color:white">{{a.area}}</td>
         <td  style="color:white"><input type="submit" name="submit" value="send" class="{% if sts is sent %}hidethis{% endif %}" style="color:black"></td>
-        <td  style=""><a href="{% url 'otppage' a.id %}" class="{% if sts is sent %}viewthis{% endif %}" style="color:white;text-decoration:none">send</a></td>
+        <td ><a href="{% url 'otppage' a.id %}" class="{% if sts is sent %}viewthis{% endif %}" style="color:white;text-decoration:none">send</a></td>
 
 
     {% endfor %}
