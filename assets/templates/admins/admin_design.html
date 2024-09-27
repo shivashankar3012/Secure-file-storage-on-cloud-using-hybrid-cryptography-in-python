@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+    background: url("{% static '2.jpg' %}");
+ background-size: cover;
+    }
+        .menu table{
+          width:100%;
+          text-align:center;
+
+          }
+          .menu table td:hover{
+          background:rgba(0,0,255,0.3);
+
+          }
+          .menu table td{
+          background:rgba(128,0,0);
+
+         }
+          .menu table,.menu table th,.menu table td {
+    border: ;
+    border-collapse: collapse;
+
+}
+.menu table th,.menu table  td {
+    padding: 15px;
+
+    }
+
+
+          .topic h1{
+          color:black;
+          padding:2px;
+          text-align:center;
+          border-style:none;
+          height:100px;
+          width:1330px;
+          float:left;
+
+
+          }
+          .mainholder{
+
+          position:relative;
+          top:70px;
+          left:50px;
+          z-index:999;
+          float:left;
+          }
+
+
+    </style>
+</head>
+<body>
+<div class="background-image">
+    <div class="topic"><h1 style="color:white;margin-top:10px;margin-left:0px;border-style:none;width:1300px;height:40px;border-color:black;background:;font-size:25px;">SECURING DATA IN CLOUD
+    </h1></div>
+<div class="menu">
+        <table>
+            <tr>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'view_userdetails' %}">USER DETAILS</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'view_uploadfile' %}"> UPLOAD FILES</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'view_user_request' %}"> USER REQUEST</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'admin_graphicalanalysis'  %}"> CHART PAGE</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'view_userquery'  %}"> VIEW FEEDBACK</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'login' %}">LOGOUT</a></td>
+
+
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+<div class="marqee">
+
+</div>
+<div class="mainholder">
+{% block adminblock %}
+{% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load static %}
+
+
+<style>
+
+     .viewfeedback{
+     position: absolute;
+    top:50px;
+    left:px;
+    padding:5px;
+    height:300px;
+    width:750px;
+    o;
+    float:left;
+    overflow:scroll;
+    }
+    .viewfeedback table{
+    width:50em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.viewfeedback table tr th{
+background:rgb(112,128,144);
+padding:5px;
+}
+.viewfeedback table tr td{
+background:rgba(112,128,144,0.3);
+padding:5px;
+}
+.viewfeedback table tr:hover td{
+background:rgba();
+}
+.any{
+border-style:solid;
+ border-width:1px;
+ height:380px;
+ width:360px;
+ margin-top:50px;
+ margin-left:830px;
+ background: url("{% static '35.png' %}");
+ background-size: 100%100%;
+float:left;
+}
+</style>
+
+
+
+
+<div class="viewfeedback">
+<form method="post">
+    {% csrf_token %}
+<table>
+    <tr>
+        <th>File Name</th>
+        <th>Category</th>
+        <th>Upload File</th>
+        <th>Location</th>
+        <th>OTP Request</th>
+        <th>Download Page</th>
+    </tr>
+
+
+    {% for a in obj %}
+    <tr>
+<td style="color:white">{{a.file_name}}</td>
+<td style="color:white">{{a.category}}</td>
+<td style="color:white">{{a.upload_file}}</td>
+<td style="color:white">{{a.area}}</td>
+        <td  style="color:white"><input type="submit" name="submit" value="send" class="{% if sts is sent %}hidethis{% endif %}" style="color:black"></td>
+        <td  style=""><a href="{% url 'otppage' a.id %}" class="{% if sts is sent %}viewthis{% endif %}" style="color:white;text-decoration:none">send</a></td>
+
+
+    {% endfor %}
+
+    <tr></tr>
+</table>
+</form>
+
+{{uid}}
+
+
+</div>
+
+<div class="any"></div>
+
+{% endblock %}

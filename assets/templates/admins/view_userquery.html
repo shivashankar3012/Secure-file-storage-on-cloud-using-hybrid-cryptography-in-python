@@ -1,0 +1,83 @@
+
+{% extends 'admins/admin_design.html' %}
+{% block adminblock %}
+{% load static %}
+
+
+
+
+<style>
+
+     .viewfeedback{
+     position: absolute;
+    top:50px;
+    left:px;
+    padding:5px;
+    height:300px;
+    width:750px;
+    o;
+    float:left;
+    overflow:scroll;
+    }
+    .viewfeedback table{
+    width:50em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.viewfeedback table tr th{
+background:rgb(112,128,144);
+padding:5px;
+}
+.viewfeedback table tr td{
+background:rgba(112,128,144,0.3);
+padding:5px;
+}
+.viewfeedback table tr:hover td{
+background:rgba();
+}
+.any{
+border-style:solid;
+ border-width:1px;
+ height:380px;
+ width:360px;
+ margin-top:50px;
+ margin-left:830px;
+ background: url("{% static '41.jpg' %}");
+ background-size: 100%100%;
+float:left;
+}
+
+</style>
+
+<div class="viewfeedback">
+<table>
+    <tr>
+        <th>USER NAME</th>
+        <th>MOBILE NUMBER</th>
+        <th>EMAIL ID</th>
+        <th>GENDER</th>
+        <th>FEEDBACK</th>
+    </tr>
+
+ <tr>
+{% for o in object %}
+
+    <td style="color:white">{{o.username.userid}}</td>
+    <td style="color:white">{{o.username.mblenum}}</td>
+    <td style="color:white">{{o.username.email}}</td>
+    <td style="color:white">{{o.username.gender}}</td>
+    <td style="color:white">{{o.feedback}}</td>
+
+
+ </tr>
+    {% endfor %}
+</table>
+</div>
+<div class="any"></div>
+
+
+{%endblock%}

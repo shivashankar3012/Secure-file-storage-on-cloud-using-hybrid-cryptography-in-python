@@ -1,0 +1,5 @@
+Organisation Name : Revenue Department
+Category : Government To Citizen
+Service Title : Verify Land Ownership
+Description : Verify whether the land belongs to Government or Private.
+Url : http://eservices.tn.gov.in/eservicesnew/land/poramboke.html?lan=en

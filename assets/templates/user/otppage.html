@@ -1,0 +1,68 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load static %}
+
+
+<style>
+    .otp{
+    position: absolute;
+    top:-30px;
+    left:130px;
+    padding:10px;
+    width:500px;
+
+}
+
+.otp table{
+    width:40em;
+    text-align:center;
+    //border-collapse:collapse;
+    border-spacing:1px;
+    background:white;
+}
+
+.otp table tr th{
+    color:;
+}
+.otp table tr th{
+background:rgb(39	45	1);
+padding:10px;
+}
+.otp table tr td{
+background:rgba(0, 51, 26,0.7);
+padding:10px;
+}
+.otp table tr:hover td{
+background:rgb(0, 51, 0);
+}
+.omg{
+border-style:solid;
+border-width:1px;
+height:270px;
+width:800px;
+margin-left:100px;
+margin-top:100px;
+background: url("{% static '34.jpg' %}");
+          background-size: 100%100%;
+}
+</style>
+<div class="otp">
+<form method="post">
+    {% csrf_token %}
+<table>
+    <tr>
+        <td style="color:white">please enter your valid otp value</td>
+        <td><input type="text" name="otp" placeholder="enter otp"></td>
+
+    </tr>
+     <tr>
+        <td colspan="3" style="text-align:center"><input type="submit" name="submit" value="submit"><br></td>
+    </tr>
+</table>
+</form></div>
+<div class="omg"></div>
+
+{{count}}
+
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'admins/admin_design.html' %}
+{% block adminblock %}
+{% load static %}
+
+<style>
+
+ .registers{
+
+    margin-top:70px;
+    margin-left:50px;
+    padding:10px;
+    width:500px;
+}
+
+.registers table{
+    width:40em;
+    text-align:center;
+    //border-collapse:collapse;
+    border-spacing:1px;
+    background:;
+}
+
+.registers table tr th{
+    color:;
+}
+.registers table tr th{
+background:
+padding:20px;
+}
+.registers table tr td{
+background:rgb(112,128,144);
+padding:10px;
+}
+.registers table tr:hover td{
+background:r);
+}
+.registerimage{
+border-style:solid;
+width:400px;
+height:380px;
+margin-top:-350px;
+margin-left:750px;
+background: url("{% static '40.jpg' %}");
+ background-size: 100%100%;
+
+}
+
+
+    </style>
+
+<div class="registers">
+<form method="post">
+
+    {% csrf_token %}
+
+{% for d in a %}
+
+<table>
+    <tr>
+        <td>file_name</td>
+        <td><input type="text" name="file" value="{{d.file_name}}" ></td>
+    </tr>
+    <tr>
+        <td>category</td>
+        <td><input type="text" name="category" value="{{d.category}}" ></td>
+    </tr>
+    <tr>
+        <td>upload_user</td>
+        <td><input type="text" name="upload_user" value="{{d.upload_user.firstname}}" ></td>
+    </tr><tr>
+        <td>upload_file</td>
+        <td><input type="text" name="upload_file" value="{{d.upload_file}}" ></td>
+    </tr><tr>
+        <td>area</td>
+        <td><input type="text" name="area" value="{{d.area}}" ></td>
+    </tr><tr>
+        <td>add_count</td>
+        <td><input type="text" name="add_count" value="{{d.add_count}}" ></td>
+    </tr>
+<tr>
+    <td style="text-align:center;" colspan="2"><input type="submit" name="submit" value="SUBMIT" style="background:red;color:white"></td>
+</tr>
+</table>
+{% endfor %}
+</form>
+
+    <div class="registerimage"></div>
+
+</div>
+{%endblock%}

@@ -1,0 +1,96 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load static %}
+
+
+<style>
+
+     .viewfeedback{
+     position: absolute;
+    top:50px;
+    left:px;
+    padding:5px;
+    height:300px;
+    width:750px;
+    /* o; */
+    float:left;
+
+    }
+    .viewfeedback table{
+    width:50em;
+    text-align:center;
+
+    border-spacing:1px;
+    /* background:; */
+}
+
+
+.viewfeedback table tr th{
+background:rgb(112,128,144);
+padding:5px;
+}
+.viewfeedback table tr td{
+background:rgba(112,128,144,0.3);
+padding:5px;
+}
+.viewfeedback table tr:hover td{
+background:rgba();
+}
+.any{
+border-style:solid;
+ border-width:1px;
+ height:380px;
+ width:360px;
+ margin-top:50px;
+ margin-left:830px;
+ background: url("{% static '35.png' %}");
+ background-size: 100%100%;
+float:left;
+}
+</style>
+
+
+
+
+
+<div class="viewfeedback">
+<form method="post">
+    {% csrf_token %}
+
+<table>
+    <tr>
+        <th>File Name</th>
+        <th>Location</th>
+        <th>Category</th>
+        <th>Upload File</th>
+        <th>STATUS</th>
+    </tr>
+    {% for v in obj %}
+    <td style="color:white">{{v.file_name}}</td>
+    <td style="color:white">{{v.area}}</td>
+    <td style="color:white">{{v.category}}</td>
+    <td style="color:white">{{v.upload_file}}</td>
+
+    {% if v.add_count <= 3 %}
+    <td><a href="{{v.upload_file.url}}" style="color:white" download>Doumload</a></td>
+    <form method="post">
+{% csrf_token %}
+    <td style="text-align:center;" colspan="2"><input type="submit" name="submit" value="OK SUCCESSFULLLY" style="background:red;color:white"></td>
+
+</form>
+     {% else %}
+     <td style="color:white"><td ><a href="{% url 'request' v.id %}" style="color:white;text-decoration:none">Request</a></td></td>
+
+    {% endif %}
+</tr>
+    {% endfor %}
+</table>
+</form>
+</div>
+
+<div class="any"></div>
+
+{% endblock %}
+
+
+ 

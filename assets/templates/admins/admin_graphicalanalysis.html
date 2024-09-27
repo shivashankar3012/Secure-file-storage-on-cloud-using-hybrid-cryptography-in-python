@@ -1,0 +1,41 @@
+{% extends 'admins/admin_design.html' %}
+{% block adminblock %}
+{% load static %}
+
+
+
+
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "cloud computing"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{
+		type: "spline",
+		dataPoints: [
+			{% for o in objects %}
+			{y: {{o.dcount}}, label: "{{o.cate}}"},
+		{% endfor %}
+		]
+	},
+
+	]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width:1000px;margin-left:100px;margin-top:40px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+{%endblock%}

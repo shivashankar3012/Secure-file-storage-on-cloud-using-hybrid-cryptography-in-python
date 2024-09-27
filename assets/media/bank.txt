@@ -1,0 +1,4 @@
+The Account Holders Name	The recipient's full name
+Bank Address	The address of the recipient's bank
+Sort Code	UK Bank code (6 digits usually displayed as 3 pairs of numbers)
+Routing Number	The American Bankers Association Number (consists of 9 digits) and is also called a ABA Routing Number

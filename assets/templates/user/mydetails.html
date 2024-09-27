@@ -1,0 +1,74 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load static %}
+
+
+<style>
+    .mydetails{
+    position: absolute;
+    top:50px;
+    left:130px;
+    padding:10px;
+    width:500px;
+}
+
+.mydetails table{
+    width:30em;
+    text-align:center;
+    border-spacing:1px;
+}
+
+/* .mydetails table tr th{
+    color:;
+} */
+.mydetails table tr th{
+    padding:10px;
+}
+.mydetails table tr td{
+    background:rgb(112,128,144);
+    padding:10px;
+}
+/* .mydetails table tr:hover td{
+background:r);
+} */
+.mydetailsimagage{
+border-style:solid;
+ border-width:1px;
+ height:300px;
+ width:300px;
+ margin-top:50px;
+ margin-left:740px;
+ background: url("{% static '33.jpg' %}");
+ background-size: 100%100%;
+
+}
+
+</style>
+<div class="mydetails"><table>
+    <tr>
+        <td style="color:white">First Name</td>
+        <td style="color:white">{{obje.firstname}}</td>
+    </tr><tr>
+        <td style="color:white">Last Name</td>
+        <td style="color:white">{{obje.lastname}}</td>
+    </tr><tr>
+        <td style="color:white">Userid</td>
+        <td style="color:white">{{obje.userid}}</td>
+    </tr><tr>
+        <td style="color:white">Mobile Number</td>
+        <td style="color:white">{{obje.mblenum}}</td>
+    </tr><tr>
+        <td style="color:white">Email </td>
+        <td style="color:white">{{obje.email}}</td>
+    </tr><tr>
+        <td style="color:white">Gender</td>
+        <td style="color:white">{{obje.gender}}</td>
+    </tr>
+</table>
+</div>
+<div class="mydetailsimagage"></div>
+
+
+
+
+{% endblock %}
